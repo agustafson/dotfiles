@@ -37,6 +37,13 @@
     brews = [
       "herdr"
       "gh"
+      "docker"
+      "python"
+      "node"
+      "go"
+      "grpcurl"
+      "protobuf"
+      "tailscale"
     ];
     casks = [
       "raycast"
@@ -47,6 +54,9 @@
       "arc"
       "cmux"
       "codexbar"
+      "typora"
+      "obsidian"
+      "figma"
       "kunchenguid/tap/firstmate-3000"
       "kunchenguid/tap/pi-launcher"
     ];
