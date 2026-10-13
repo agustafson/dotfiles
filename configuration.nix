@@ -37,7 +37,6 @@
     brews = [
       "herdr"
       "pi-coding-agent"
-      "neovim"
     ];
     casks = [
       "raycast"
