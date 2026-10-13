@@ -36,7 +36,6 @@
     onActivation.extraFlags = [ "--force" ];
     brews = [
       "herdr"
-      "pi-coding-agent"
     ];
     casks = [
       "raycast"
@@ -44,8 +43,10 @@
       "slack"
       "cursor"
       "arc"
+      "cmux"
+      "codexbar"
       "kunchenguid/tap/firstmate-3000"
-      "ghostty"
+      "kunchenguid/tap/pi-launcher"
     ];
   };
 }
