@@ -61,6 +61,7 @@
       "figma"
       "docker-desktop"
       "grok-bot"
+      "superwhisper"
       "kunchenguid/tap/firstmate-3000"
       "kunchenguid/tap/pi-launcher"
     ];
