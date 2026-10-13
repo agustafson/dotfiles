@@ -15,7 +15,7 @@
 
     # Override the Homebrew version nix-homebrew pins
     brew-src = {
-      url = "git+https://github.com/Homebrew/brew?ref=refs/tags/7.0.9";
+      url = "git+https://github.com/Homebrew/brew?ref=refs/tags/7.0.8";
       flake = false;
     };
     nix-homebrew.inputs.brew-src.follows = "brew-src";
