@@ -46,6 +46,7 @@
       "tailscale"
       "awscli"
       "common-fate/granted/granted"
+      "hermes-agent"
     ];
     casks = [
       "raycast"
@@ -62,6 +63,7 @@
       "docker-desktop"
       "grok-bot"
       "superwhisper"
+      "hermes-desktop"
       "kunchenguid/tap/firstmate-3000"
       "kunchenguid/tap/pi-launcher"
     ];
