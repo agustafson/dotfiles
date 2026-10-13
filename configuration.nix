@@ -58,6 +58,7 @@
       "obsidian"
       "figma"
       "docker-desktop"
+      "grok-bot"
       "kunchenguid/tap/firstmate-3000"
       "kunchenguid/tap/pi-launcher"
     ];
