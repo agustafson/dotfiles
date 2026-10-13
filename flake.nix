@@ -12,6 +12,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    # Override the Homebrew version nix-homebrew pins
+    brew-src = {
+      url = "git+https://github.com/Homebrew/brew?ref=refs/tags/7.0.9";
+      flake = false;
+    };
+    nix-homebrew.inputs.brew-src.follows = "brew-src";
   };
 
   outputs = inputs@{ self, nix-darwin, nix-homebrew, home-manager, nixpkgs }:
