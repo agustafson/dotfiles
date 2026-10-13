@@ -36,10 +36,17 @@
     onActivation.extraFlags = [ "--force" ];
     brews = [
       "herdr"
+      "pi-coding-agent"
+      "neovim"
     ];
     casks = [
-      "wezterm"
+      "raycast"
       "claude-code"
+      "slack"
+      "cursor"
+      "arc"
+      "kunchenguid/tap/firstmate-3000"
+      "ghostty"
     ];
   };
 }
