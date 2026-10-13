@@ -2,23 +2,16 @@
   description = "dotfiles";
 
   inputs = {
-    # Use `github:NixOS/nixpkgs/nixpkgs-26.05-darwin` to use Nixpkgs 26.05.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
-    # Use `github:nix-darwin/nix-darwin/nix-darwin-26.05` to use Nixpkgs 26.05.
-    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+    # Use `github:NixOS/nixpkgs/nixpkgs-26.11-darwin` to use Nixpkgs 26.11.
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.11-darwin";
+    # Use `github:nix-darwin/nix-darwin/nix-darwin-26.11` to use Nixpkgs 26.11.
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager/release-26.05";
+    home-manager.url = "github:nix-community/home-manager/release-26.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-
-    # Override the Homebrew version nix-homebrew pins
-    brew-src = {
-      url = "git+https://github.com/Homebrew/brew?ref=refs/tags/7.0.8";
-      flake = false;
-    };
-    nix-homebrew.inputs.brew-src.follows = "brew-src";
   };
 
   outputs = inputs@{ self, nix-darwin, nix-homebrew, home-manager, nixpkgs }:
