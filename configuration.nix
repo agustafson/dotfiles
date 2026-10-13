@@ -44,6 +44,8 @@
       "grpcurl"
       "protobuf"
       "tailscale"
+      "awscli"
+      "common-fate/granted/granted"
     ];
     casks = [
       "raycast"
