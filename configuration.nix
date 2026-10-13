@@ -40,6 +40,7 @@
     ];
     casks = [
       "raycast"
+      "claude"
       "claude-code"
       "slack"
       "cursor"
