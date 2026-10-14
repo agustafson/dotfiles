@@ -47,6 +47,7 @@
       "awscli"
       "common-fate/granted/granted"
       "hermes-agent"
+      "uv"
     ];
     casks = [
       "raycast"
