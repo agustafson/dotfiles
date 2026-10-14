@@ -48,6 +48,7 @@
       "common-fate/granted/granted"
       "hermes-agent"
       "uv"
+      "ffmpeg"
     ];
     casks = [
       "raycast"
