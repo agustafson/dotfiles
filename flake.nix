@@ -19,9 +19,12 @@
       flake = false;
     };
     nix-homebrew.inputs.brew-src.follows = "brew-src";
+
+    # Hermes Agent
+    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
-  outputs = inputs@{ self, nix-darwin, nix-homebrew, home-manager, nixpkgs, brew-src }:
+  outputs = inputs@{ self, nix-darwin, nix-homebrew, home-manager, nixpkgs, brew-src, hermes-agent }:
     let
       # The one username line to change if this isn't your machine.
       # bootstrap.sh offers to rewrite this for you if your macOS username differs.
@@ -38,6 +41,23 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit user; };
+            home-manager.users.${user} = import ./home.nix;
+          }
+        ];
+      };
+
+
+
+      darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit user inputs; }; 
+        modules = [
+          ./configuration.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit user inputs; };
             home-manager.users.${user} = import ./home.nix;
           }
         ];
