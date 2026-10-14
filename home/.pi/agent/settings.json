@@ -16,5 +16,6 @@
     "npm:@ryan_nookpi/pi-extension-codex-fast-mode@0.2.6",
     "npm:pi-cursor-sdk",
     "git:github.com/algal/pi-openai-server-compaction"
-  ]
+  ],
+  "lastChangelogVersion": "1.2.0"
 }
