@@ -33,6 +33,11 @@ in
     '';
     shellAliases = {
       ".." = "cd ..";
+      "..." = "cd ../..";
+      "~" = "cd ~"
+      ll = "ls -lG"
+      la = "ls -A"
+      lla = "ls -lah"
       add = "git add .";
       push = "git push";
       pull = "git pull";
