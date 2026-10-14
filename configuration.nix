@@ -50,6 +50,7 @@
       "uv"
     ];
     casks = [
+      "atlassian/homebrew-acli"
       "arc"
       "claude"
       "claude-code"
