@@ -47,6 +47,7 @@
       "protobuf"
       "python"
       "tailscale"
+      "todoist-cli"
       "uv"
     ];
     casks = [
@@ -68,6 +69,7 @@
       "slack"
       "superwhisper"
       "tailscale-app"
+      "todoist-app"
       "typora"
     ];
   };
