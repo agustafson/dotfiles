@@ -19,12 +19,9 @@
       flake = false;
     };
     nix-homebrew.inputs.brew-src.follows = "brew-src";
-
-    # Hermes Agent
-    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
-  outputs = inputs@{ self, nix-darwin, nix-homebrew, home-manager, nixpkgs, brew-src, hermes-agent }:
+  outputs = inputs@{ self, nix-darwin, nix-homebrew, home-manager, nixpkgs, brew-src }:
     let
       # The one username line to change if this isn't your machine.
       # bootstrap.sh offers to rewrite this for you if your macOS username differs.

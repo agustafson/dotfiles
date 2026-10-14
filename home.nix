@@ -18,8 +18,6 @@ in
     neovim
     # the font everything renders in
     nerd-fonts.hack
-    # Reference the Apple Silicon app bundle
-    inputs.hermes-agent.packages.${pkgs.system}.desktop
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
@@ -30,6 +28,11 @@ in
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
       bindkey '^f' autosuggest-accept
+
+      # Hermes' installer wants ~/.local/bin on PATH. It appends this to ~/.zshrc
+      # unless a matching line already exists, and home-manager's .zshrc is
+      # read-only, so declare it here.
+      export PATH="$HOME/.local/bin:$PATH"
     '';
     shellAliases = {
       ".." = "cd ..";
