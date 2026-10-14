@@ -55,6 +55,7 @@
       "claude-code"
       "slack"
       "cursor"
+      "cursor-cli"
       "arc"
       "cmux"
       "codexbar"
