@@ -48,6 +48,7 @@
       "common-fate/granted/granted"
       "uv"
       "ffmpeg"
+      "nilBora/apps/meeting-reminder"
     ];
     casks = [
       "raycast"
