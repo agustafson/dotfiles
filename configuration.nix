@@ -65,6 +65,7 @@
       "grok-bot"
       "hermes-desktop"
       "superwhisper"
+      "tailscale-app"
       "kunchenguid/tap/firstmate-3000"
       "kunchenguid/tap/pi-launcher"
     ];
