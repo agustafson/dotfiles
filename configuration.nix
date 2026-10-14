@@ -35,6 +35,7 @@
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
     brews = [
+      "atlassian/homebrew-acli/acli"
       "awscli"
       "common-fate/granted/granted"
       "docker"
@@ -51,7 +52,6 @@
       "uv"
     ];
     casks = [
-      "atlassian/homebrew-acli/acli"
       "arc"
       "claude"
       "claude-code"
