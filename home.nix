@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:
+{ config, pkgs, inputs, user, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
@@ -18,6 +18,8 @@ in
     neovim
     # the font everything renders in
     nerd-fonts.hack
+    # Reference the Apple Silicon app bundle
+    inputs.hermes-agent.packages.${pkgs.system}.desktop
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
