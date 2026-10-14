@@ -29,6 +29,8 @@ in
     initContent = ''
       bindkey '^f' autosuggest-accept
 
+      export NODE_EXTRA_CA_CERTS="$NIX_SSL_CERT_FILE"
+
       # Hermes' installer wants ~/.local/bin on PATH. It appends this to ~/.zshrc
       # unless a matching line already exists, and home-manager's .zshrc is
       # read-only, so declare it here.
