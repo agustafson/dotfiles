@@ -41,6 +41,7 @@
       "docker"
       "ffmpeg"
       "herdr"
+      "gcloud-cli"
       "gh"
       "go"
       "googleworkspace-cli"
