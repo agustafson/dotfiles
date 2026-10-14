@@ -43,6 +43,7 @@
       "herdr"
       "gh"
       "go"
+      "googleworkspace-cli"
       "grpcurl"
       "node"
       "protobuf"
