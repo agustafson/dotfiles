@@ -46,7 +46,6 @@
       "tailscale"
       "awscli"
       "common-fate/granted/granted"
-      "hermes-agent"
       "uv"
       "ffmpeg"
     ];
@@ -65,7 +64,6 @@
       "docker-desktop"
       "grok-bot"
       "superwhisper"
-      "hermes-desktop"
       "kunchenguid/tap/firstmate-3000"
       "kunchenguid/tap/pi-launcher"
     ];
