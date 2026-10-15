@@ -14,6 +14,11 @@ goto             = "prefix+g"
 copy_mode  = "prefix+y"  # herdr's copy-mode entry key; copy-mode's own internal keys (v/space select, y/Enter copy, q/Esc cancel) aren't configurable
 
 [ui]
+# Stray ";35;2;32M"-style text on mouse move = SGR any-motion mouse reports (button code 35)
+# leaking into a pane as plain text. Off = herdr never asks the outer terminal for mouse
+# events, so nothing can leak (cost: no click/drag UI in herdr). Re-enabled to re-test on
+# the 0.9.5 server; set back to false if the garbage returns.
+mouse_capture = true
 # Agents panel order: explicit choice of "spaces" (grouped by space, the default) over "priority".
 agent_panel_sort = "spaces"
 

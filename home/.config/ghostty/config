@@ -1,0 +1,10 @@
+# Shared by cmux (reads ~/.config/ghostty/config) and Ghostty itself, so moving
+# between the two keeps identical terminal behavior.
+
+# Option acts as Alt: Option+Left/Right word-jump in shells and agent TUIs
+# instead of inserting ";3D" / ";3C".
+macos-option-as-alt = true
+
+# Let herdr and agents (pi, claude) set the system clipboard via OSC 52 without
+# a prompt. Reading stays on the default "ask".
+clipboard-write = allow
