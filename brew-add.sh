@@ -58,15 +58,43 @@ add_entry() {
   rm -f "$tmp"
 }
 
+# Prints the canonical name brew resolves "<name>" to, or nothing. brew also
+# follows renamed casks and aliases (e.g. "ollama" -> "ollama-app"), so callers
+# must compare the result with <name>.
+canonical_name() { # formula|cask name
+  local json
+  json="$(brew info --"$1" --json=v2 "$2" 2>/dev/null)" || return 0
+  case "$1" in
+    formula) jq -r '.formulae[0].full_name // empty' <<<"$json" ;;
+    cask) jq -r '.casks[0].full_token // empty' <<<"$json" ;;
+  esac
+}
+
+# Notes a cask named "<name>-app" if one exists, with its homepage, so you can
+# add it in a later commit.
+app_hint() {
+  local app json title homepage
+  case "$1" in *-app) return 0 ;; esac
+  app="$1-app"
+  json="$(brew info --cask --json=v2 "$app" 2>/dev/null)" || return 0
+  [ "$(jq -r '.casks[0].full_token // empty' <<<"$json")" = "$app" ] || return 0
+  title="$(jq -r '.casks[0].name[0] // empty' <<<"$json")"
+  homepage="$(jq -r '.casks[0].homepage // empty' <<<"$json")"
+  echo "Also available as the cask '$app'${title:+ ($title)}."
+  [ -z "$homepage" ] || echo "  $homepage"
+  echo "  Add it later with: ./brew-add.sh $app"
+}
+
 if block_has brews "$name" || block_has casks "$name"; then
   echo "'$name' is already in configuration.nix; nothing to do."
+  app_hint "$name"
   exit 0
 fi
 
 is_formula=false
 is_cask=false
-brew info --formula "$name" >/dev/null 2>&1 && is_formula=true
-brew info --cask "$name" >/dev/null 2>&1 && is_cask=true
+[ "$(canonical_name formula "$name")" = "$name" ] && is_formula=true
+[ "$(canonical_name cask "$name")" = "$name" ] && is_cask=true
 
 if ! $is_formula && ! $is_cask; then
   echo "No formula or cask named '$name' in the Homebrew catalogue." >&2
@@ -95,5 +123,6 @@ add_entry "$kind" "$name"
 git -C "$DIR" commit -q -m "Brew: added $name" -- configuration.nix
 
 if [ "$kind" = brews ]; then label=formula; else label=cask; fi
-echo "Added $label '$name' to $kind in configuration.nix and committed: brew; added $name"
+echo "Added $label '$name' to $kind in configuration.nix and committed: Brew: added $name"
 echo "Run ./rebuild.sh to install it."
+app_hint "$name"
