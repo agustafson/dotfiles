@@ -38,11 +38,14 @@
       "atlassian/homebrew-acli/acli"
       "awscli"
       "common-fate/granted/granted"
+      "delve" # Debugger for the Go programming language
       "docker"
       "ffmpeg"
       "herdr"
       "gh"
       "go"
+      "gopls" # Go language server
+      "golangci-lint" # Lint for the Go programming language
       "googleworkspace-cli"
       "grpcurl"
       "node"
