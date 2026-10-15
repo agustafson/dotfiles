@@ -171,7 +171,7 @@ Calm never changes prompts, tool execution, model context, session data, or orde
 
 Pi's package system declares two third-party sources in the linked global `settings.json`:
 
-- `npm:pi-web-access@0.14.0` - the exact public npm release for web access.
+- `npm:pi-web-access@0.32.0` - the exact public npm release for web access. This release takes TypeBox from Pi instead of installing a second copy.
 - `npm:@ryan_nookpi/pi-extension-codex-fast-mode@0.2.6` - the exact public npm release from `ryan_nookpi`.
 
 The versions are immutable pins, so Pi does not move them during package updates. Deliberate updates require a new source and security audit, followed by an explicit pin change in `home/.pi/agent/settings.json`. On Pi 0.82.0, global settings declarations install missing pinned packages automatically at startup. No one-time install command is required. Pi keeps the downloaded npm package trees in its own unmanaged `~/.pi/agent/npm` runtime directory, outside Home Manager and Git tracking.
